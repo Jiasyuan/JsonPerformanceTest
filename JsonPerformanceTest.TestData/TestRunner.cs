@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
 namespace JsonPerformanceTest.TestData
 {
@@ -19,8 +18,8 @@ namespace JsonPerformanceTest.TestData
             long allSerializationMs =0, allDeserializationMs=0;
             performanceDataList.ForEach(e =>
             {
-                allSerializationMs += e.SerializeMS;
-                allDeserializationMs += e.DeserializeMS;
+                allSerializationMs += e.SerializeMs;
+                allDeserializationMs += e.DeserializeMs;
             });
             Console.WriteLine(libraryName);
             Console.WriteLine($"Average Serialization: {allSerializationMs/times:N0}ms");
@@ -51,7 +50,7 @@ namespace JsonPerformanceTest.TestData
             sw.Start();
 
             //反序列
-            string afterDeser = deserializeFunc(json1)
+            string afterDeserialize = deserializeFunc(json1)
                 [indexToTest].Display;
 
             sw.Stop();
@@ -60,13 +59,13 @@ namespace JsonPerformanceTest.TestData
 
             //比對還原後的資料是否相同
             Console.WriteLine($"Before: {beforeSer}");
-            Console.WriteLine($"After: {afterDeser}");
-            Console.WriteLine($"Pass Test: {beforeSer.Equals(afterDeser)}");
+            Console.WriteLine($"After: {afterDeserialize}");
+            Console.WriteLine($"Pass Test: {beforeSer.Equals(afterDeserialize)}");
             Console.WriteLine("");
             return new PerformanceTestData()
             {
-                SerializeMS = serializationMs,
-                DeserializeMS = deserializationMs
+                SerializeMs = serializationMs,
+                DeserializeMs = deserializationMs
             };
         }
     }

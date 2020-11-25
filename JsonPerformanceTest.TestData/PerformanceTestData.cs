@@ -2,7 +2,7 @@
 {
     public class PerformanceTestData
     {
-        public long DeserializeMS { get; set; }
-        public long SerializeMS { get; set; }
+        public long DeserializeMs { get; set; }
+        public long SerializeMs { get; set; }
     }
 }
