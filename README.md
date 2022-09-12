@@ -14,3 +14,5 @@ Json is an open standard file format, and data interchange format. It is a very 
 + Jil : 2.17  
 
 ## Test Reult
+![Deserialize](https://github.com/Jiasyuan/JsonPerformanceTest/blob/master/Pic/De.png?raw=true)
+![Serialize](https://github.com/Jiasyuan/JsonPerformanceTest/blob/master/Pic/Se.png?raw=true)
